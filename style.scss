@@ -1,0 +1,140 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: skyblue;
+  text-align: center;
+ 
+}
+h1{
+  font-family: 'Poppins', sans-serif;
+
+}
+.wrapper{
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.scene {
+  width: 41vw;
+  justify-self: end;
+}
+
+.sun {
+  &__three {
+    opacity: 0.1;
+    fill: green;
+    transform: scale(0.65);
+    transform-origin: 50% 50%;
+    animation: scale3 9s ease-out infinite;
+  }
+  &__two {
+    opacity: 0.2;
+    fill: green;
+    transform: scale(0.75);
+    transform-origin: 50% 50%;
+    animation: scale2 9s 3s ease-out infinite;
+  }
+  &__one {
+    opacity: 0.3;
+    fill: green;
+    transform: scale(0.85);
+    transform-origin: 50% 50%;
+    animation: scale1 9s 6s ease-out infinite;
+  }
+  
+}
+
+.cloud {
+  &__left {
+    animation: cloudLeft 5s infinite ease-in-out alternate;
+  }
+  &__top {
+    animation: cloudTop 5s infinite ease-in-out alternate;
+  }
+  &__right {
+    animation: cloudRight 3s infinite ease-in-out alternate;
+  }
+}
+
+.minar {
+  path, 
+  rect, 
+  polygon {
+    fill: #2F323C;
+  }
+}
+
+
+@keyframes scale1 {
+  0% {
+    transform: scale(0.85);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+@keyframes scale2 {
+  0% {
+    transform: scale(0.75);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
+@keyframes scale3 {
+  0% {
+    transform: scale(0.65);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes cloudLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-23px);
+  }
+}
+
+@keyframes cloudTop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(23px);
+  }
+}
+
+@keyframes cloudRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translate(-10px, 20px);
+  }
+}
+@media (max-width:700px) {
+h2{
+    margin-top: 310px;
+    padding: 0 2px;
+  }
+  
+  .scene{
+    width: 100vw;
+  }
+  
+}
